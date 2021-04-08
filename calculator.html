@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+        	<title>Calculator</title>
+        	<meta charset="utf-8">
+        	<script language="javascript">
+        		function calcuator(){
+        			var a=document.calc.number1.value;
+        			var b=document.calc.number2.value;
+        			var x=document.calc.dropDown.value;
+        			var y=parseFloat(x);
+        			if((a!="")&&(b!="")){
+        			switch(y){
+        				case(1):
+        					var c=parseFloat(a)+parseFloat(b);
+        					document.calc.number3.value=c;
+        				break;
+        				case(2):
+        					var c=parseFloat(a)-parseFloat(b);
+        					document.calc.number3.value=c;
+        				break;
+        				case(3):
+        					var c=parseFloat(a)*parseFloat(b);
+        					document.calc.number3.value=c;
+        				break;
+        				case(4):
+        				if(b!="0"){
+        					var c=parseFloat(a)/parseFloat(b);
+        					document.calc.number3.value=c;
+        				}
+        				else{
+        					break;
+        				}
+        				break;
+        			}
+        		}
+        		else
+        			alert("Please enter correct value!");
+        	}
+        	</script>
+        </head>
+        <body bgcolor="#F0F8FF">
+        	<marquee><h1>Calculator by Zhengwei Tan</h1></marquee>
+        		<form name="calc" action="NULL" method="post" align="center">
+        			First Number = <input type="text" name="number1" id="number1"><br>
+        			Second Number = <input type="text" name="number2" id="number2"><br>
+        			<h3>calculation method</h3>
+        			<select id="dropDown" style="width:60px">
+        				<option value="1" selected="selected">
+        					+
+        				</option>
+        				<option value="2">
+        					-
+        				</option>
+        				<option value="3">
+        					*
+        				</option>
+        				<option value="4">
+        					/
+        				</option>
+        			</select><br><br>
+        			<input type="button" value="Calculate!" onclick="calcuator()"><br><br>
+        			Result = <input type="text" name="number3">
+        		</form>
+        </body>
+        </html>
